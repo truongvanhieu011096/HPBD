@@ -35,7 +35,6 @@
             pointer-events: none;
         }
 
-        /* Vùng chạy lời chúc */
         .wishes-barrage-container {
             position: absolute;
             top: 0;
@@ -47,7 +46,6 @@
             pointer-events: none;
         }
 
-        /* Chữ chạy nền sáng: Đậm nét, đổ bóng rõ ràng */
         .barrage-item {
             position: absolute;
             white-space: nowrap;
@@ -64,13 +62,11 @@
             animation: flyLeft var(--duration) linear forwards;
         }
 
-        /* THIỆP KÍNH MỜ TRẮNG SANG TRỌNG (White Glassmorphism) */
         .crystal-card {
             z-index: 10;
             background: rgba(255, 255, 255, 0.45);
             padding: 35px 22px;
             border-radius: 30px;
-            /* Đổ bóng sâu để nổi bật trên nền sáng */
             box-shadow: 0 20px 40px rgba(142, 152, 172, 0.3),
                         inset 0 1px 0 rgba(255, 255, 255, 0.6),
                         0 0 20px rgba(255, 117, 140, 0.1);
@@ -143,7 +139,6 @@
             from { transform: translateX(100vw); }
             to { transform: translateX(-100%); }
         }
-		/* Hiệu ứng ánh kim lấp lánh */
 .glitter-gold {
     background: linear-gradient(
         to right, 
@@ -158,9 +153,7 @@
     background-size: 200% auto;
     display: inline-block;
     font-weight: 900;
-    /* Animation chạy tia sáng lấp lánh */
     animation: shine 3s linear infinite;
-    /* Đổ bóng nhẹ để chữ nổi bật trên nền kính */
     filter: drop-shadow(0 2px 3px rgba(184, 134, 11, 0.3));
 }
 
@@ -170,7 +163,6 @@
     }
 }
 
-/* Thêm hiệu ứng lấp lánh điểm xuyết (tùy chọn) */
 .student-name {
     position: relative;
 }
@@ -211,8 +203,7 @@
 
         const fireworks = [];
         const meteors = [];
-        
-        // Bảng màu đậm sắc nét cho nền sáng
+ 
         const colors = ['#ff0055', '#7209b7', '#00b4d8', '#ff477e', '#4361ee', '#f72585', '#4cc9f0'];
         
         const wishList = [
@@ -359,7 +350,6 @@
             }
         }
 
-        // --- LỚP ĐỒ HỌA HẠT PHÁO HOA NỀN SÁNG ---
         class FireworkParticle {
             constructor(x, y, color) {
                 this.x = x;
@@ -416,7 +406,6 @@
         });
 
         function loop() {
-            // Xóa nhẹ canvas để không lưu vệt đen mờ, giữ nền sáng trong trẻo
             ctx.clearRect(0, 0, width, height);
 
             meteors.forEach(meteor => {
