@@ -147,6 +147,37 @@
             from { transform: translateX(100vw); }
             to { transform: translateX(-100%); }
         }
+		/* Hiệu ứng ánh kim lấp lánh */
+.glitter-gold {
+    background: linear-gradient(
+        to right, 
+        #bf953f, 
+        #fcf6ba, 
+        #b38728, 
+        #fbf5b7, 
+        #aa771c
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    display: inline-block;
+    font-weight: 900;
+    /* Animation chạy tia sáng lấp lánh */
+    animation: shine 3s linear infinite;
+    /* Đổ bóng nhẹ để chữ nổi bật trên nền kính */
+    filter: drop-shadow(0 2px 3px rgba(184, 134, 11, 0.3));
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Thêm hiệu ứng lấp lánh điểm xuyết (tùy chọn) */
+.student-name {
+    position: relative;
+}
     </style>
 </head>
 <body>
@@ -155,16 +186,20 @@
     <div class="wishes-barrage-container" id="barrageContainer"></div>
 
     <div class="crystal-card">
-        <h1>HAPPY BIRTHDAY</h1>
-        <div class="date">✨ 12 . 06 . 2011 ✨</div>
-        <p style="font-size: 0.85rem; color: #6c757d; font-weight: 700; letter-spacing: 1px;">CHÚC MỪNG SINH NHẬT</p>
-        <div class="student-name">🎀 Bảo Ngọc 🎀</div>
-        <div class="wishes">
-            <p>Chúc <span class="highlight">Bảo Ngọc</span> bước sang tuổi mới luôn ngập tràn niềm vui, ngày càng xinh xắn, ngoan ngoãn và đạt kết quả thật cao trong học tập!</p>
-            <p style="margin-top: 10px;">Thầy tin rằng em sẽ luôn là niềm tự hào của gia đình. Mọi điều tốt đẹp nhất sẽ đến với em! 🌟</p>
-            <div class="footer">— Yêu thương gửi tới em! —</div>
-        </div>
+    <h1>HAPPY BIRTHDAY</h1>
+    <div class="date">✨ 12 . 06 . 2011 ✨</div>
+    <p style="font-size: 0.85rem; color: #6c757d; font-weight: 700; letter-spacing: 1px;">CHÚC MỪNG SINH NHẬT</p>
+    
+    <div class="student-name">
+        <span class="glitter-gold">Bảo Ngọc</span> 
     </div>
+
+    <div class="wishes">
+        <p>Chúc <span class="highlight">Bảo Ngọc</span> bước sang tuổi mới luôn ngập tràn niềm vui, ngày càng xinh xắn, ngoan ngoãn và đạt kết quả thật cao trong học tập!</p>
+        <p style="margin-top: 10px;">Thầy tin rằng em sẽ luôn là niềm tự hào của gia đình. Mọi điều tốt đẹp nhất sẽ đến với em! 🌟</p>
+        <div class="footer">— Yêu thương gửi tới em! —</div>
+    </div>
+</div>
 
     <script>
         const canvas = document.getElementById('skyCanvas');
